@@ -32,7 +32,7 @@ set expandtab
 set autoindent
 autocmd FileType ruby set tabstop=2|set shiftwidth=2|set softtabstop=2
 
-set textwidth=0                 " Set textwidth
+set textwidth=72                 " Set textwidth
 
 " Folding settings
 set foldmethod=indent           " Fold based on indent
@@ -369,6 +369,7 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType tex setlocal omnifunc=texcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
