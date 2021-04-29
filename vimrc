@@ -14,29 +14,25 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
-NeoBundle 'Shougo/vimproc', {
-            \ 'build' : {
-            \     'windows' : 'make -f make_mingw32.mak',
-            \     'cygwin' : 'make -f make_cygwin.mak',
-            \     'mac' : 'make -f make_mac.mak',
-            \     'unix' : 'make -f make_unix.mak',
-            \    },
-            \ }
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 NeoBundle 'saltstack/salt-vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'Shougo/vimshell'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'taq/vim-git-branch-info'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'bling/vim-airline'
 
 call neobundle#end()
@@ -257,7 +253,6 @@ set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 
 set statusline+=%=              " Left/right seperator
-set statusline+=%{GitBranchInfoString()}          " Git branch info
 set statusline+=%{StatuslineCurrentHighlight()} " Current highlight
 set statusline+=%c,             " Cursor column
 set statusline+=%l/%L           " Cursor line/total lines
